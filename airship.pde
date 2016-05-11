@@ -39,5 +39,12 @@ class Airship extends GameObject
     {
       position.x = -120;
     }
+    
+    if(keys[0])
+    {
+      Box box = new Box(position.x, position.y);
+      
+      box.add(box);
+    }
   }
 }

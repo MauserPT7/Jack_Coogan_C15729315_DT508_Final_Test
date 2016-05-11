@@ -1,17 +1,15 @@
-class Clouds extends GameObject
+class Cloud extends GameObject
 {
-  Clouds()
+  Cloud()
   {
     super();
   }
   
-  Clouds(float x, float y)
+  Cloud(float x, float y)
   {
     super(x, y);
     
-    cloudSize = random(30, 50);
-    cloudX = random(0, width);
-    cloudY = random(0, cloudAltitude);
+    cloudSize = random(25, 50);
   }
   
   void render()
@@ -20,7 +18,13 @@ class Clouds extends GameObject
     
     translate(position.x, position.y);
     
+    noStroke();
+    
+    fill(cloudColor);
+    
     ellipse(cloudX, cloudY, cloudSize, cloudSize);
+    ellipse(cloudX - 15, cloudY, cloudSize - 8, cloudSize - 8);
+    ellipse(cloudX + 15, cloudY, cloudSize - 12, cloudSize - 12);
     
     popMatrix();
   }

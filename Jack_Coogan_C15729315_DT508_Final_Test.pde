@@ -4,9 +4,10 @@
 Airship airship;
 CollectionPerson collectionPerson;
 Cloud cloud;
+Box box;
 
 ArrayList < GameObject > gameObjects = new ArrayList < GameObject > ();
-ArrayList < Clouds > clouds = new ArrayList < Clouds > (5);
+ArrayList < Cloud > clouds = new ArrayList < Cloud > (5);
 
 boolean[] keys;
 
@@ -18,6 +19,8 @@ float airplaneAltitude = 100;
 
 int score;
 
+int cloudCount = 5;
+
 void setup()
 {
   size(500, 500);
@@ -26,15 +29,13 @@ void setup()
   gameObjects.add(new Airship(-30, airplaneAltitude));
   gameObjects.add(new CollectionPerson(50, 450));
   
-  for(int i = 0 ; i < clouds.size() ; i++)
-  {
-    Clouds clouds = clouds.get(i);
-    Clouds.render();
-    Clouds.update();
-  }
-  
   keys = new boolean[1];
   keys[0] = false; // Spacebar
+  
+  for(int i = 0 ; i < cloudCount ; i++)
+  {
+    clouds.add(new Cloud(random(0, width), random(40, height / 3)));
+  }
 }
 
 void draw()
@@ -47,12 +48,21 @@ void draw()
   
   rect(0, height / 2, width, height);
   
+  for(int i = 0 ; i < clouds.size() ; i++)
+  {
+    Cloud cloud = clouds.get(i);
+    cloud.render();
+    cloud.update();
+  }
+  
   for(int i = 0 ; i < gameObjects.size() ; i++)
   {
     GameObject gameObject = gameObjects.get(i);
     gameObject.update();
     gameObject.render();
   }
+  
+  for(int i = 0 ; i < box
   
   fill(textColor);
     
