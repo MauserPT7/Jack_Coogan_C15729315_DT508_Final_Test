@@ -12,6 +12,8 @@ ArrayList < Box > boxes = new ArrayList < Box > (1);
 
 boolean[] keys;
 
+boolean boxLanded = false;
+
 color skyColor = color(25, 240, 225);
 color grassColor = color(80, 240, 25);
 color textColor = color(50);
@@ -64,7 +66,11 @@ void draw()
     GameObject gameObject = gameObjects.get(i);
     gameObject.update();
     gameObject.render();
-    gameObject.collection();
+    
+    if(boxLanded == true)
+    {
+      gameObject.collection();
+    }
   }
   
   for(int i = 0 ; i < boxes.size() ; i++)

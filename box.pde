@@ -18,7 +18,7 @@ class Box extends GameObject
   {
     pushMatrix();
     
-    translate(position.x, position.y);
+    translate(currentBoxPosition.x, currentBoxPosition.y);
     
     fill(boxColor);
     
@@ -32,23 +32,25 @@ class Box extends GameObject
     forward.x = 0.5f;
     forward.y = 2;
       
-    position.add(forward);
+    currentBoxPosition.add(forward);
       
-    if(position.y >= fallHeight)
+    if(currentBoxPosition.y >= fallHeight)
     {
-      println("Passed");
+      println("Passed Height");
        
       boxLanded = true;
       
       if(boxLanded == true)
       {
-        println("Done");
+        println("Landed");
       }
        
-      forward.x = -0.5f;
-      forward.y = -2;
+      forward.x = 0.5f;
+      forward.y = 2;
       
-      position.add(forward);
+      currentBoxPosition.sub(forward);
+      
+      println("Box" + currentBoxPosition);
     }
   }
 }

@@ -8,13 +8,15 @@ class CollectionPerson extends GameObject
   CollectionPerson(float x, float y)
   {
     super(x, y);
+    
+    collectionPoint = PVector.lerp(currentBoxPosition, personPosition, 1);
   }
   
   void render()
   {
     pushMatrix();
     
-    translate(position.x, position.y);
+    translate(personPosition.x, personPosition.y);
     
     fill(personColor);
     
@@ -26,20 +28,15 @@ class CollectionPerson extends GameObject
   
   void update()
   {    
-    forward.x = 0;
-    forward.y = 0;
-    
-    position.add(forward);
+    println("Person" + personPosition);
   }
   
   void collection()
-  {
-    if(boxLanded)
-    {
-      forward.x = 2;
-      forward.y = -2;
+  {    
+    println("Collection Time");
     
-      position.add(forward);
-    }
+    personPosition.lerp(collectionPoint, 1);
+    
+    println("New" + collectionPoint);
   }
 }

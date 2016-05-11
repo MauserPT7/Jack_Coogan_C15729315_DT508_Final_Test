@@ -1,6 +1,9 @@
 class GameObject
 {
   public PVector position;
+  public PVector personPosition;
+  public PVector currentBoxPosition;
+  public PVector collectionPoint;
 
   PVector forward;
 
@@ -37,7 +40,6 @@ class GameObject
   float fallHeight;
 
   boolean boxLaunched = false;
-  boolean boxLanded = false;
 
   // Clouds
   color cloudColor = color(random(220, 255));
@@ -49,7 +51,9 @@ class GameObject
   GameObject(float x, float y)
   {
     position = new PVector(x, y);
-
+    personPosition = new PVector(x, y);
+    currentBoxPosition = new PVector(x, y);
+    //collectionPoint = PVector.lerp(personPosition, currentBoxPosition, 1);
     forward = new PVector(1, 0);
   }
 
