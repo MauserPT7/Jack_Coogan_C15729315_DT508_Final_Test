@@ -18,6 +18,9 @@ color textColor = color(50);
 
 float airplaneAltitude = 100;
 
+float personSpawnX = 50;
+float personSpawnY = 450;
+
 int score;
 
 int cloudCount = 5;
@@ -28,7 +31,7 @@ void setup()
   smooth();
   
   gameObjects.add(new Airship(-30, airplaneAltitude));
-  gameObjects.add(new CollectionPerson(50, 450));
+  gameObjects.add(new CollectionPerson(personSpawnX, personSpawnY));
   
   keys = new boolean[1];
   keys[0] = false; // Spacebar
@@ -61,6 +64,7 @@ void draw()
     GameObject gameObject = gameObjects.get(i);
     gameObject.update();
     gameObject.render();
+    gameObject.collection();
   }
   
   for(int i = 0 ; i < boxes.size() ; i++)

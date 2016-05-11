@@ -25,7 +25,21 @@ class CollectionPerson extends GameObject
   }
   
   void update()
-  {
+  {    
+    forward.x = 0;
+    forward.y = 0;
     
+    position.add(forward);
+  }
+  
+  void collection()
+  {
+    if(boxLanded)
+    {
+      forward.x = 2;
+      forward.y = -2;
+    
+      position.add(forward);
+    }
   }
 }

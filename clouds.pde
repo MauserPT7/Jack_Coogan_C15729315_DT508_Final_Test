@@ -10,6 +10,7 @@ class Cloud extends GameObject
     super(x, y);
     
     cloudSize = random(25, 50);
+    cloudSpeed = random(-0.5f, -1.5f);
   }
   
   void render()
@@ -31,7 +32,7 @@ class Cloud extends GameObject
   
   void update()
   {
-    forward.x = -1;
+    forward.x = cloudSpeed;
     
     position.add(forward);
     
