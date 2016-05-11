@@ -2,6 +2,7 @@
 // Final Exam, May 2016
 
 Airship airship;
+CollectionPerson collectionPerson;
 
 ArrayList < GameObject > gameObjects = new ArrayList < GameObject > ();
 
@@ -16,7 +17,8 @@ void setup()
 {
   size(500, 500);
   
-  gameObjects.add(new Airship(0, airplaneAltitude));
+  gameObjects.add(new Airship(-30, airplaneAltitude));
+  gameObjects.add(new CollectionPerson(50, 450));
   
   keys = new boolean[1];
   keys[0] = false; // Spacebar

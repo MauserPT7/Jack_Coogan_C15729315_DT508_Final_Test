@@ -18,6 +18,14 @@ class GameObject
   float engineX = -30;
   float engineY = -4;
   
+  // CollectionPerson
+  color personColor = color(235, 225, 25);
+  
+  float personX = 0;
+  float personY = 0;
+  float personWidth = 10;
+  float personHeight = 20;
+  
   GameObject(float x, float y)
   {
     position = new PVector(x, y);
