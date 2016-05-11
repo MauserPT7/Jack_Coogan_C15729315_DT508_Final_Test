@@ -12,16 +12,32 @@ class Airship extends GameObject
   
   void render()
   {
+    pushMatrix();
     
+    translate(position.x, position.y);
+    
+    strokeWeight(3);
+    stroke(0);
+    
+    fill(airshipColor);
+    
+    rect(tailX, tailY, tailWidth, tailHeight);
+    ellipse(0, 0, airshipWidth, airshipHeight);
+    rect(engineX, engineY, engineWidth, engineHeight);
+    rect(engineX + 45, engineY, engineWidth, engineHeight);
+    
+    popMatrix();
   }
   
   void update()
   {
-    strokeWeight(5);
+    forward.x = 1;
     
-    fill(airshipColor);
+    position.add(forward);
     
-    rect(0, 0, 20, 10);
-    ellipse(0, 0, airshipWidth, airshipHeight);
+    if(position.x >= width + 70)
+    {
+      position.x = -120;
+    }
   }
 }
