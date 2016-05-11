@@ -60,13 +60,16 @@ class GameObject
 
   public void render()
   {
+    
   }
 
   public void update()
   {
+    
   }
 
   public void collection()
   {
+    
   }
 }
