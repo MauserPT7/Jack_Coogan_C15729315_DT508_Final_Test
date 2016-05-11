@@ -34,6 +34,9 @@ class GameObject
   float boxX = 0;
   float boxY = 0;
   float boxSize = 10;
+  float fallHeight;
+  
+  boolean boxLaunched = false;
   
   // Clouds
   color cloudColor = color(random(220, 255));

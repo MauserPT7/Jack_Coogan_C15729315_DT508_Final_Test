@@ -8,6 +8,7 @@ Box box;
 
 ArrayList < GameObject > gameObjects = new ArrayList < GameObject > ();
 ArrayList < Cloud > clouds = new ArrayList < Cloud > (5);
+ArrayList < Box > boxes = new ArrayList < Box > (1);
 
 boolean[] keys;
 
@@ -62,7 +63,12 @@ void draw()
     gameObject.render();
   }
   
-  for(int i = 0 ; i < box
+  for(int i = 0 ; i < boxes.size() ; i++)
+  {
+    Box box = boxes.get(i);
+    box.render();
+    box.update();
+  }
   
   fill(textColor);
     

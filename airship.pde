@@ -40,11 +40,14 @@ class Airship extends GameObject
       position.x = -120;
     }
     
-    if(keys[0])
+    if(keys[0]
+    && boxLaunched == false)
     {
+      boxLaunched = true;
+      
       Box box = new Box(position.x, position.y);
       
-      box.add(box);
+      boxes.add(box);
     }
   }
 }

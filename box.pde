@@ -8,6 +8,8 @@ class Box extends GameObject
   Box(float x, float y)
   {
     super(x, y);
+    
+    fallHeight = random(300, 470);
   }
   
   void render()
@@ -25,6 +27,19 @@ class Box extends GameObject
   
   void update()
   {
-    
+      forward.x = 0.5f;
+      forward.y = 2;
+      
+      position.add(forward);
+      
+      if(position.y >= fallHeight)
+      {
+        println("Passed");
+        
+        forward.x = -0.5f;
+        forward.y = -2;
+        
+        position.add(forward);
+      }
   }
 }
