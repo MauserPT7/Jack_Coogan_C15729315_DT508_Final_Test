@@ -17,6 +17,11 @@ class Airship extends GameObject
   
   void update()
   {
+    strokeWeight(5);
     
+    fill(airshipColor);
+    
+    rect(0, 0, 20, 10);
+    ellipse(0, 0, airshipWidth, airshipHeight);
   }
 }

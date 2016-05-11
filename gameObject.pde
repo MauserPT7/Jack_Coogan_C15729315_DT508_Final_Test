@@ -2,9 +2,11 @@ class GameObject
 {
   public PVector position;
   
-  //Airplane
-  float airplan
- 
+  //Airship
+  color airshipColor = color(100);
+  
+  float airshipWidth = 50;
+  float airshipHeight = 25; 
   
   GameObject(float x, float y)
   {
