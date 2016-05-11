@@ -12,7 +12,15 @@ class Box extends GameObject
   
   void render()
   {
+    pushMatrix();
     
+    translate(position.x, position.y);
+    
+    fill(boxColor);
+    
+    rect(boxX, boxY, boxSize, boxSize);
+    
+    popMatrix();
   }
   
   void update()

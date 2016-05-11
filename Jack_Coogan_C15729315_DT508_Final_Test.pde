@@ -10,8 +10,11 @@ boolean[] keys;
 
 color skyColor = color(25, 240, 225);
 color grassColor = color(80, 240, 25);
+color textColor = color(50);
 
 float airplaneAltitude = 100;
+
+int score;
 
 void setup()
 {
@@ -40,4 +43,8 @@ void draw()
     gameObject.update();
     gameObject.render();
   }
+  
+  fill(textColor);
+    
+  text("Score: " + score, 20, 20);
 }
